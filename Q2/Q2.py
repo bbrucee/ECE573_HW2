@@ -2,99 +2,91 @@ import sys
 import os
 
 
-class UFBase:
-    def __init__(self, size):
-        self.N = size
-        self.id_array = list(range(size))
+def kd_merge(input_array, left, middle, right):
+    swaps = 0
 
-    def find(self, p, q):
-        pass
+    N1 = middle - left + 1
+    N2 = right - middle
 
-    def union(self, p, q):
-        pass
+    left_sub = []
+    right_sub = []
+    for i in range(0, N1):
+        left_sub.append(input_array[left + i])
+    for j in range(0, N2):
+        right_sub.append(input_array[middle + 1 + j])
 
+    i = j = 0
+    k = left
 
-class UFQuickfind(UFBase):
-    def find(self, p, q):
-        return self.id_array[p] == self.id_array[q]
-
-    def union(self, p, q):
-        pid = self.id_array[p]
-        qid = self.id_array[q]
-        for i in range(self.N):
-            if self.id_array[i] == pid:
-                self.id_array[i] = qid
-
-
-class UFQuickunion(UFBase):
-    def root(self, i):
-        while i != self.id_array[i]:
-            i = self.id_array[i]
-        return i
-
-    def find(self, p, q):
-        return self.root(p) == self.root(q)
-
-    def union(self, p, q):
-        i = self.root(p)
-        j = self.root(q)
-        self.id_array[i] = j
-
-
-class UFQuickunionbalanced(UFBase):
-    def __init__(self, size):
-        UFBase.__init__(self, size)
-        self.size_array = [1] * size
-
-    def root(self, i):
-        while i != self.id_array[i]:
-            i = self.id_array[i]
-        return i
-
-    def find(self, p, q):
-        return self.root(p) == self.root(q)
-
-    def union(self, p, q):
-        i = self.root(p)
-        j = self.root(q)
-        if self.size_array[i] < self.size_array[j]:
-            self.id_array[i] = j
-            self.size_array[j] += self.size_array[i]
+    while i < N1 and j < N2:
+        if left_sub[i] <= right_sub[j]:
+            input_array[k] = left_sub[i]
+            i += 1
         else:
-            self.id_array[j] = i
-            self.size_array[i] += self.size_array[j]
+            input_array[k] = right_sub[j]
+            swaps = swaps + middle - (left + i) + 1
+            j += 1
+        k += 1
+
+    while i < N1:
+        input_array[k] = left_sub[i]
+        i += 1
+        k += 1
+
+    while j < N2:
+        input_array[k] = right_sub[j]
+        j += 1
+        k += 1
+
+    return swaps
+
+
+def kd_mergesort(input_array, left, right):
+    swaps = 0
+    if right > left:
+        mid_point = (left + right) // 2
+        swaps = swaps + kd_mergesort(input_array, left, mid_point)
+        swaps = swaps + kd_mergesort(input_array, mid_point + 1, right)
+        swaps = swaps + kd_merge(input_array, left, mid_point, right)
+    return swaps
+
+
+def kendalltau(input_array):
+    temp_array = input_array[:]
+    return kd_mergesort(temp_array, 0, len(temp_array) - 1)
 
 
 def main():
-    try:
-        # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
-        rel_path = sys.argv[1]
-        cwd = os.getcwd()
-        abs_file_path = cwd + rel_path
-        print("Input data file: {}".format(abs_file_path))
-        file = open(abs_file_path)
-        data_array = []
-        for line in file.readlines():
-            data_array.append(tuple(map(int, line.split())))
-        print("Input data: {}".format(data_array))
-        file.close()
-
-        A = UFQuickfind(8192)
-        B = UFQuickunion(8192)
-        C = UFQuickunionbalanced(8192)
-
-        for (left, right) in data_array:
-            if not A.find(left, right):
-                A.union(left, right)
-            if not B.find(left, right):
-                B.union(left, right)
-            if not C.find(left, right):
-                C.union(left, right)
-
-        print("Not sure what the output should be...")
-
-    except IndexError:
-        print("No input data file")
+    pass
+    # try:
+    #     # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
+    #     rel_path = sys.argv[1]
+    #     cwd = os.getcwd()
+    #     abs_file_path = cwd + rel_path
+    #     print("Input data file: {}".format(abs_file_path))
+    #     file = open(abs_file_path)
+    #     data_array = []
+    #     for line in file.readlines():
+    #         data_array.append(tuple(map(int, line.split())))
+    #     print("Input data: {}".format(data_array))
+    #     file.close()
+    #
+    #     A = UFQuickfind(8192)
+    #     B = UFQuickunion(8192)
+    #     C = UFQuickunionbalanced(8192)
+    #
+    #     for (left, right) in data_array:
+    #         if not A.find(left, right):
+    #             A.union(left, right)
+    #         if not B.find(left, right):
+    #             B.union(left, right)
+    #         if not C.find(left, right):
+    #             C.union(left, right)
+    #
+    #     print("Not sure what the output should be...")
+    #
+    # except IndexError:
+    #     print("No input data file")
 
 
 if __name__ == '__main__':

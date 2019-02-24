@@ -1,100 +1,70 @@
 import sys
 import os
+import csv
 
 
-class UFBase:
-    def __init__(self, size):
-        self.N = size
-        self.id_array = list(range(size))
+# Dataset is already sorted so we can use a modified bubble sort to exit after a single pass through
+# The idea here is that bubble sort is completed when it makes a pass with no swaps
+# https://www.quora.com/What-is-modified-bubble-sorting
 
-    def find(self, p, q):
-        pass
+def q3_dataset_creation(write_to_csv=False):
 
-    def union(self, p, q):
-        pass
-
-
-class UFQuickfind(UFBase):
-    def find(self, p, q):
-        return self.id_array[p] == self.id_array[q]
-
-    def union(self, p, q):
-        pid = self.id_array[p]
-        qid = self.id_array[q]
-        for i in range(self.N):
-            if self.id_array[i] == pid:
-                self.id_array[i] = qid
+    dataset = 1024 * [1] + 2048 * [11] + 4096 * [111] + 1024 * [1111]
+    # https://stackoverflow.com/questions/2084069/create-a-csv-file-with-values-from-a-python-list
+    if write_to_csv:
+        with open('Q3_dataset.csv', 'w') as myfile:
+            wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
+            wr.writerow(dataset)
+    return dataset
 
 
-class UFQuickunion(UFBase):
-    def root(self, i):
-        while i != self.id_array[i]:
-            i = self.id_array[i]
-        return i
-
-    def find(self, p, q):
-        return self.root(p) == self.root(q)
-
-    def union(self, p, q):
-        i = self.root(p)
-        j = self.root(q)
-        self.id_array[i] = j
-
-
-class UFQuickunionbalanced(UFBase):
-    def __init__(self, size):
-        UFBase.__init__(self, size)
-        self.size_array = [1] * size
-
-    def root(self, i):
-        while i != self.id_array[i]:
-            i = self.id_array[i]
-        return i
-
-    def find(self, p, q):
-        return self.root(p) == self.root(q)
-
-    def union(self, p, q):
-        i = self.root(p)
-        j = self.root(q)
-        if self.size_array[i] < self.size_array[j]:
-            self.id_array[i] = j
-            self.size_array[j] += self.size_array[i]
-        else:
-            self.id_array[j] = i
-            self.size_array[i] += self.size_array[j]
+def bubblesort(input_array):
+    total_swaps = 0
+    for i in range(len(input_array)):
+        swaps = 0
+        for j in range(len(input_array)-i-1):
+            if input_array[j] > input_array[j+1]:
+                temp = input_array[j]
+                input_array[j] = input_array[j+1]
+                input_array[j+1] = temp
+                swaps = swaps + 1
+                total_swaps = total_swaps + 1
+        if swaps == 0:
+            break
+    return total_swaps
 
 
 def main():
-    try:
-        # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
-        rel_path = sys.argv[1]
-        cwd = os.getcwd()
-        abs_file_path = cwd + rel_path
-        print("Input data file: {}".format(abs_file_path))
-        file = open(abs_file_path)
-        data_array = []
-        for line in file.readlines():
-            data_array.append(tuple(map(int, line.split())))
-        print("Input data: {}".format(data_array))
-        file.close()
-
-        A = UFQuickfind(8192)
-        B = UFQuickunion(8192)
-        C = UFQuickunionbalanced(8192)
-
-        for (left, right) in data_array:
-            if not A.find(left, right):
-                A.union(left, right)
-            if not B.find(left, right):
-                B.union(left, right)
-            if not C.find(left, right):
-                C.union(left, right)
-
-        print("Not sure what the output should be...")
-
-    except IndexError:
-        print("No input data file")
+    pass
+#     try:
+#         # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
+#         rel_path = sys.argv[1]
+#         cwd = os.getcwd()
+#         abs_file_path = cwd + rel_path
+#         print("Input data file: {}".format(abs_file_path))
+#         file = open(abs_file_path)
+#         data_array = []
+#         for line in file.readlines():
+#             data_array.append(tuple(map(int, line.split())))
+#         print("Input data: {}".format(data_array))
+#         file.close()
+#
+#         A = UFQuickfind(8192)
+#         B = UFQuickunion(8192)
+#         C = UFQuickunionbalanced(8192)
+#
+#         for (left, right) in data_array:
+#             if not A.find(left, right):
+#                 A.union(left, right)
+#             if not B.find(left, right):
+#                 B.union(left, right)
+#             if not C.find(left, right):
+#                 C.union(left, right)
+#
+#         print("Not sure what the output should be...")
+#
+#     except IndexError:
+#         print("No input data file")
 
 
 if __name__ == '__main__':
