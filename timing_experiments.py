@@ -45,17 +45,17 @@ def shellsort_comps(dataset_number=1):
 
     plt.subplot2grid((2, 3), (0, 0))
     plt.plot(data_sizes, shell_sort_comps)
-    plt.title("Shell Sort: Total Comparisons")
+    plt.title("Shell Sort: Total Comparisons", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Number of Comparisons")
     plt.subplot2grid((2, 3), (0, 1))
     plt.plot(data_sizes, partial_insertion_sort_comps)
-    plt.title("Shell Sort: Insertion Sort Phase")
+    plt.title("Shell Sort: Insertion Sort Phase", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Number of Comparisons")
     plt.subplot2grid((2, 3), (0, 2))
     plt.plot(data_sizes, insertion_sort_comps)
-    plt.title("Insertion Sort: Comparisons")
+    plt.title("Insertion Sort: Comparisons", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Number of Comparisons")
 
@@ -96,12 +96,12 @@ def kendalltau_outputs(dataset_number=1):
 
     plt.subplot2grid((2, 2), (0, 0))
     plt.plot(data_sizes, kd_merge_outputs)
-    plt.title("Kendall Tau: Merge Sort O(nlogn)")
+    plt.title("Kendall Tau: Merge Sort O(nlogn)", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Kendall Tau Distance")
     plt.subplot2grid((2, 2), (0, 1))
     plt.plot(data_sizes, bubble_outputs)
-    plt.title("Kendall Tau: Bubble Sort O(n^2)")
+    plt.title("Kendall Tau: Bubble Sort O(n^2)", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Kendall Tau Distance")
 
@@ -144,12 +144,12 @@ def kendalltau_timing(dataset_number=1):
 
     plt.subplot2grid((2, 2), (0, 0))
     plt.plot(data_sizes, kd_merge_timings)
-    plt.title("Kendall Tau: Merge Sort O(nlogn)")
+    plt.title("Kendall Tau: Merge Sort O(nlogn)", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Runtime (seconds)")
     plt.subplot2grid((2, 2), (0, 1))
     plt.plot(data_sizes, bubble_timings)
-    plt.title("Kendall Tau: Bubble Sort O(n^2)")
+    plt.title("Kendall Tau: Bubble Sort O(n^2)", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Runtime (seconds)")
 
@@ -190,12 +190,12 @@ def mergesort_vs_mergesort(dataset_number=1):
 
     plt.subplot2grid((2, 2), (0, 0))
     plt.plot(data_sizes, rec_comps)
-    plt.title("Recursive Merge Sort")
+    plt.title("Recursive Merge Sort", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Number of Comparisons")
     plt.subplot2grid((2, 2), (0, 1))
     plt.plot(data_sizes, ite_comps)
-    plt.title("Iterative Merge Sort")
+    plt.title("Iterative Merge Sort", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Number of Comparisons")
 
@@ -260,12 +260,12 @@ def quicksort_vs_mergesort(dataset_number=1):
 
     plt.subplot2grid((2, 2), (0, 0))
     plt.plot(data_sizes[:-1], ms_timings[:-1])
-    plt.title("Merge Sort")
+    plt.title("Merge Sort", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Runtime (seconds)")
     plt.subplot2grid((2, 2), (0, 1))
     plt.plot(data_sizes[:-1], qs_timings[:-1])
-    plt.title("Quick Sort")
+    plt.title("Quick Sort", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Runtime (seconds)")
 
@@ -327,12 +327,12 @@ def quicksort_vs_mergesort_cutoffs(dataset_number=1):
 
     plt.subplot2grid((2, 2), (0, 0))
     plt.plot(data_sizes[:-1], ms_timings[:-1])
-    plt.title("Merge Sort")
+    plt.title("Merge Sort", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Runtime (seconds)")
     plt.subplot2grid((2, 2), (0, 1))
     plt.plot(data_sizes[:-1], qs_timings[:-1])
-    plt.title("Quick Sort")
+    plt.title("Quick Sort", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Runtime (seconds)")
 
@@ -375,7 +375,7 @@ def quicksort_varying_cutoffs(dataset_number=1):
 
     plt.subplot2grid((2, 2), (0, 0), colspan=2, rowspan=1)
     plt.plot(cutoffs, qs_timings)
-    plt.title("Runtime for different cutoffs")
+    plt.title("Runtime for different cutoffs", y=1.08)
     plt.xlabel("Cutoff for Insertion Sort")
     plt.ylabel("Runtime (seconds)")
 
