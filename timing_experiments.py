@@ -10,13 +10,13 @@ import functools
 from random import shuffle
 
 
-def shellsort_comps():
+def shellsort_comps(dataset_number=1):
     shell_sort_comps = []
     partial_insertion_sort_comps = []
     insertion_sort_comps = []
     data_sizes = [1024, 2048, 4096, 8192, 16384, 32768]
     for data_size in data_sizes:
-        rel_path = "/Q1/data/data1.{}".format(data_size)
+        rel_path = "/Q1/data/data{}.{}".format(dataset_number, data_size)
         cwd = os.getcwd()
         abs_file_path = cwd + rel_path
         input_file = open(abs_file_path)
@@ -36,7 +36,7 @@ def shellsort_comps():
         cell_text.append(["{} Comparisons".format(time_data) for time_data in time_tuple])
 
     fig = plt.figure(1)
-    plt.suptitle("Q1: Shell Sort and Insertion Sort Graphs")
+    plt.suptitle("Q1: Shell Sort and Insertion Sort Graphs using data{}".format(dataset_number))
     fig.subplots_adjust(left=0.2, top=0.8, wspace=1)
 
     ax = plt.subplot2grid((2, 3), (1, 0), colspan=4, rowspan=2)
@@ -63,12 +63,58 @@ def shellsort_comps():
     plt.show()
 
 
-def kendalltau_timing():
+def kendalltau_outputs(dataset_number=1):
+    kd_merge_outputs = []
+    bubble_outputs = []
+    data_sizes = [1024, 2048, 4096, 8192, 16384, 32768]
+    for data_size in data_sizes:
+        rel_path = "/Q2/data/data{}.{}".format(dataset_number, data_size)
+        cwd = os.getcwd()
+        abs_file_path = cwd + rel_path
+        input_file = open(abs_file_path)
+        data_array = []
+        for line in input_file.readlines():
+            data_array.append(int(line))
+        input_file.close()
+
+        kd_merge_outputs.append(kendalltau(data_array))
+        bubble_outputs.append(bubblesort(data_array)[1])
+
+    columns = ('Kendall Tau Distance: Merge Sort', 'Kendall Tau Distance: Bubble Sort')
+    rows = ["{} integers".format(x) for x in data_sizes]
+    cell_text = []
+    for time_tuple in zip(kd_merge_outputs, bubble_outputs):
+        cell_text.append(["Distance is {}".format(time_data) for time_data in time_tuple])
+
+    fig = plt.figure(1)
+    plt.suptitle("Q2: Kendall Tau Distance Graphs using data{}".format(dataset_number))
+    fig.subplots_adjust(left=0.2, top=0.8, wspace=1)
+
+    ax = plt.subplot2grid((2, 2), (1, 0), colspan=4, rowspan=2)
+    ax.table(cellText=cell_text, rowLabels=rows, colLabels=columns, loc='upper center')
+    ax.axis("off")
+
+    plt.subplot2grid((2, 2), (0, 0))
+    plt.plot(data_sizes, kd_merge_outputs)
+    plt.title("Kendall Tau: Merge Sort O(nlogn)")
+    plt.xlabel("Input Size (Length of Array)")
+    plt.ylabel("Kendall Tau Distance")
+    plt.subplot2grid((2, 2), (0, 1))
+    plt.plot(data_sizes, bubble_outputs)
+    plt.title("Kendall Tau: Bubble Sort O(n^2)")
+    plt.xlabel("Input Size (Length of Array)")
+    plt.ylabel("Kendall Tau Distance")
+
+    fig.set_size_inches(w=12, h=10)
+    plt.show()
+
+
+def kendalltau_timing(dataset_number=1):
     kd_merge_timings = []
     bubble_timings = []
     data_sizes = [1024, 2048, 4096, 8192, 16384, 32768]
     for data_size in data_sizes:
-        rel_path = "/Q2/data/data1.{}".format(data_size)
+        rel_path = "/Q2/data/data{}.{}".format(dataset_number, data_size)
         cwd = os.getcwd()
         abs_file_path = cwd + rel_path
         input_file = open(abs_file_path)
@@ -89,7 +135,7 @@ def kendalltau_timing():
         cell_text.append(["{0:.10f} seconds".format(time_data) for time_data in time_tuple])
 
     fig = plt.figure(1)
-    plt.suptitle("Q2: Kendall Tau Runtime Graphs")
+    plt.suptitle("Q2: Kendall Tau Runtime Graphs using data{}".format(dataset_number))
     fig.subplots_adjust(left=0.2, top=0.8, wspace=1)
 
     ax = plt.subplot2grid((2, 2), (1, 0), colspan=4, rowspan=2)
@@ -111,13 +157,13 @@ def kendalltau_timing():
     plt.show()
 
 
-def mergesort_vs_mergesort():
+def mergesort_vs_mergesort(dataset_number=1):
     rec_comps = []
     ite_comps = []
 
     data_sizes = [1024, 2048, 4096, 8192, 16384, 32768]
     for data_size in data_sizes:
-        rel_path = "/Q4/data/data1.{}".format(data_size)
+        rel_path = "/Q4/data/data{}.{}".format(dataset_number, data_size)
         cwd = os.getcwd()
         abs_file_path = cwd + rel_path
         input_file = open(abs_file_path)
@@ -135,7 +181,7 @@ def mergesort_vs_mergesort():
         cell_text.append(["{} comparisons".format(time_data) for time_data in time_tuple])
 
     fig = plt.figure(1)
-    plt.suptitle("Q4: Recursive vs Iterative Merge Sort Comparisons")
+    plt.suptitle("Q4: Recursive vs Iterative Merge Sort Comparisons using data{}".format(dataset_number))
     fig.subplots_adjust(left=0.2, top=0.8, wspace=1)
 
     ax = plt.subplot2grid((2, 2), (1, 0), colspan=4, rowspan=2)
@@ -157,14 +203,14 @@ def mergesort_vs_mergesort():
     plt.show()
 
 
-def quicksort_vs_mergesort():
+def quicksort_vs_mergesort(dataset_number=1):
     ite_ms_timings = []
     ms_timings = []
     qs_timings = []
 
     data_sizes = [1024, 2048, 4096, 8192, 16384, 32768]
     for data_size in data_sizes:
-        rel_path = "/Q4/data/data1.{}".format(data_size)
+        rel_path = "/Q4/data/data{}.{}".format(dataset_number, data_size)
         cwd = os.getcwd()
         abs_file_path = cwd + rel_path
         input_file = open(abs_file_path)
@@ -179,7 +225,7 @@ def quicksort_vs_mergesort():
         qs_timer = timeit.Timer(functools.partial(quicksort, data_array[:], 0, len(data_array)))
         qs_timings.append(qs_timer.timeit(5))
 
-    rel_path = "/Q5/data/data1.{}".format(32768)
+    rel_path = "/Q5/data/data{}.{}".format(dataset_number, 32768)
     cwd = os.getcwd()
     abs_file_path = cwd + rel_path
     input_file = open(abs_file_path)
@@ -188,7 +234,10 @@ def quicksort_vs_mergesort():
         data_array.append(int(line))
     input_file.close()
     data_array = data_array * 256
-    shuffle(data_array)
+    if dataset_number == 0:
+        data_array.sort()
+    else:
+        shuffle(data_array)
     data_sizes.append(len(data_array))
     ms_timer = timeit.Timer(functools.partial(mergesort_insertion_cutoff, data_array[:], 0, len(data_array) - 1))
     ms_timings.append(ms_timer.timeit(1))
@@ -202,7 +251,7 @@ def quicksort_vs_mergesort():
         cell_text.append(["{0:.10f} seconds".format(time_data) for time_data in time_tuple])
 
     fig = plt.figure(1)
-    plt.suptitle("Q5: Merge Sort vs Quick Sort Runtime Comparison")
+    plt.suptitle("Q5: Merge Sort vs Quick Sort Runtime Comparison using data{}".format(dataset_number))
     fig.subplots_adjust(left=0.2, top=0.8, wspace=1)
 
     ax = plt.subplot2grid((2, 2), (1, 0), colspan=4, rowspan=2)
@@ -224,13 +273,13 @@ def quicksort_vs_mergesort():
     plt.show()
 
 
-def quicksort_vs_mergesort_cutoffs():
+def quicksort_vs_mergesort_cutoffs(dataset_number=1):
     ms_timings = []
     qs_timings = []
 
     data_sizes = [1024, 2048, 4096, 8192, 16384, 32768]
     for data_size in data_sizes:
-        rel_path = "/Q5/data/data1.{}".format(data_size)
+        rel_path = "/Q5/data/data{}.{}".format(dataset_number, data_size)
         cwd = os.getcwd()
         abs_file_path = cwd + rel_path
         input_file = open(abs_file_path)
@@ -243,7 +292,7 @@ def quicksort_vs_mergesort_cutoffs():
         qs_timer = timeit.Timer(functools.partial(quicksort_insertion_cutoff, data_array[:], 0, len(data_array)))
         qs_timings.append(qs_timer.timeit(1))
 
-    rel_path = "/Q5/data/data1.{}".format(32768)
+    rel_path = "/Q5/data/data{}.{}".format(dataset_number, 32768)
     cwd = os.getcwd()
     abs_file_path = cwd + rel_path
     input_file = open(abs_file_path)
@@ -252,7 +301,10 @@ def quicksort_vs_mergesort_cutoffs():
         data_array.append(int(line))
     input_file.close()
     data_array = data_array*256
-    shuffle(data_array)
+    if dataset_number == 0:
+        data_array.sort()
+    else:
+        shuffle(data_array)
     data_sizes.append(len(data_array))
     ms_timer = timeit.Timer(functools.partial(mergesort_insertion_cutoff, data_array[:], 0, len(data_array) - 1))
     ms_timings.append(ms_timer.timeit(1))
@@ -288,13 +340,13 @@ def quicksort_vs_mergesort_cutoffs():
     plt.show()
 
 
-def quicksort_varying_cutoffs():
+def quicksort_varying_cutoffs(dataset_number=1):
     qs_timings = []
     data_sizes = [32768]
     cutoffs = range(10, 10000, 100)
     for cutoff in cutoffs:
         for data_size in data_sizes:
-            rel_path = "/Q5/data/data1.{}".format(data_size)
+            rel_path = "/Q5/data/data{}.{}".format(dataset_number, data_size)
             cwd = os.getcwd()
             abs_file_path = cwd + rel_path
             input_file = open(abs_file_path)
@@ -314,7 +366,7 @@ def quicksort_varying_cutoffs():
         cell_text.append(["{0:10f}".format(time_data) for time_data in time_tuple])
 
     fig = plt.figure(1)
-    plt.suptitle("Q5: Quick Sort Varying Cutoff w/ 131072 elements")
+    plt.suptitle("Q5: Quick Sort Varying Cutoff w/ 131072 elements using data{}".format(dataset_number))
     fig.subplots_adjust(left=0.2, top=0.8, wspace=1)
 
     ax = plt.subplot2grid((2, 2), (1, 0), colspan=2, rowspan=1)
@@ -332,11 +384,19 @@ def quicksort_varying_cutoffs():
 
 
 def main():
+    shellsort_comps(0)
     shellsort_comps()
+    kendalltau_outputs(0)
+    kendalltau_outputs()
+    kendalltau_timing(0)
     kendalltau_timing()
+    mergesort_vs_mergesort(0)
     mergesort_vs_mergesort()
+    quicksort_vs_mergesort(0)
     quicksort_vs_mergesort()
+    quicksort_vs_mergesort_cutoffs(0)
     quicksort_vs_mergesort_cutoffs()
+    quicksort_varying_cutoffs(0)
     quicksort_varying_cutoffs()
 
 
