@@ -18,6 +18,7 @@ def insertion_sort(input_array):
 
 # https://www.geeksforgeeks.org/merge-sort/
 def merge(input_array, left, middle, right):
+    comps = 0
     N1 = middle - left + 1
     N2 = right - middle
 
@@ -35,9 +36,11 @@ def merge(input_array, left, middle, right):
         if left_sub[i] <= right_sub[j]:
             input_array[k] = left_sub[i]
             i += 1
+            comps += 1
         else:
             input_array[k] = right_sub[j]
             j += 1
+            comps += 1
         k += 1
 
     while i < N1:
@@ -50,19 +53,23 @@ def merge(input_array, left, middle, right):
         j += 1
         k += 1
 
+    return comps
+
 
 def recursive_mergesort(input_array, left, right):
+    comps = 0
     if right > left:
         mid_point = (left + right) // 2
-        recursive_mergesort(input_array, left, mid_point)
-        recursive_mergesort(input_array, mid_point + 1, right)
-        merge(input_array, left, mid_point, right)
+        comps += recursive_mergesort(input_array, left, mid_point)
+        comps += recursive_mergesort(input_array, mid_point + 1, right)
+        comps += merge(input_array, left, mid_point, right)
+    return comps
 
 
 # https://www.geeksforgeeks.org/iterative-merge-sort/
 def iterative_mergesort(input_array):
     sz = 1
-
+    comps = 0
     while sz < len(input_array) - 1:
         left = 0
         while left < len(input_array) - 1:
@@ -73,9 +80,10 @@ def iterative_mergesort(input_array):
             else:
                 right = 2 * sz + left - 1
 
-            merge(input_array, left, mid, right)
+            comps += merge(input_array, left, mid, right)
             left = left + sz * 2
         sz = 2 * sz
+    return comps
 
 
 def mergesort_insertion_cutoff(input_array, left, right, cutoff=7):
@@ -90,23 +98,22 @@ def mergesort_insertion_cutoff(input_array, left, right, cutoff=7):
 
 
 def main():
-    pass
-    # try:
-    #     # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
-    #     rel_path = sys.argv[1]
-    #     cwd = os.getcwd()
-    #     abs_file_path = cwd + rel_path
-    #     print("Input data file: {}".format(abs_file_path))
-    #     file = open(abs_file_path)
-    #     data_array = []
-    #     for line in file.readlines():
-    #         data_array.append(int(line))
-    #     print("Input data: {}".format(data_array))
-    #     file.close()
-    #     farthest_pair(data_array, True)
-    #
-    # except IndexError:
-    #     print("No input data file")
+    try:
+        # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
+        rel_path = sys.argv[1]  # "/data/data1.1024"
+        cwd = os.getcwd()
+        abs_file_path = cwd + rel_path
+        input_file = open(abs_file_path)
+        data_array = []
+        for line in input_file.readlines():
+            data_array.append(int(line))
+        input_file.close()
+        print("Input data: {}".format(data_array))
+        print("Iterative mergesort called on a copy of data_array, used {} comparisons".format(iterative_mergesort(data_array[:])))
+        print("Recursive mergesort called on a copy of data_array, used {} comparisons".format(recursive_mergesort(data_array[:], 0, len(data_array)-1)))
+
+    except IndexError:
+        print("No input data file")
 
 
 if __name__ == '__main__':

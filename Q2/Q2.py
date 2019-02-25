@@ -57,36 +57,21 @@ def kendalltau(input_array):
 
 
 def main():
-    pass
-    # try:
-    #     # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
-    #     rel_path = sys.argv[1]
-    #     cwd = os.getcwd()
-    #     abs_file_path = cwd + rel_path
-    #     print("Input data file: {}".format(abs_file_path))
-    #     file = open(abs_file_path)
-    #     data_array = []
-    #     for line in file.readlines():
-    #         data_array.append(tuple(map(int, line.split())))
-    #     print("Input data: {}".format(data_array))
-    #     file.close()
-    #
-    #     A = UFQuickfind(8192)
-    #     B = UFQuickunion(8192)
-    #     C = UFQuickunionbalanced(8192)
-    #
-    #     for (left, right) in data_array:
-    #         if not A.find(left, right):
-    #             A.union(left, right)
-    #         if not B.find(left, right):
-    #             B.union(left, right)
-    #         if not C.find(left, right):
-    #             C.union(left, right)
-    #
-    #     print("Not sure what the output should be...")
-    #
-    # except IndexError:
-    #     print("No input data file")
+    try:
+        # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
+        rel_path = sys.argv[1]  # "/data/data1.1024"
+        cwd = os.getcwd()
+        abs_file_path = cwd + rel_path
+        input_file = open(abs_file_path)
+        data_array = []
+        for line in input_file.readlines():
+            data_array.append(int(line))
+        input_file.close()
+        print("Input data: {}".format(data_array))
+        print("Kendall Tau distance is {}".format(kendalltau(data_array)))
+
+    except IndexError:
+        print("No input data file")
 
 
 if __name__ == '__main__':

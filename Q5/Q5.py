@@ -65,23 +65,22 @@ def quicksort_insertion_cutoff(input_array, left, right, cutoff=7):
 
 
 def main():
-    pass
-    # try:
-    #     # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
-    #     rel_path = sys.argv[1]
-    #     cwd = os.getcwd()
-    #     abs_file_path = cwd + rel_path
-    #     print("Input data file: {}".format(abs_file_path))
-    #     file = open(abs_file_path)
-    #     data_array = []
-    #     for line in file.readlines():
-    #         data_array.append(int(line))
-    #     print("Input data: {}".format(data_array))
-    #     file.close()
-    #     print("Fastest 3 Sum algorithm finds {} triples".format(fastest_3sum(data_array)))
-    #
-    # except IndexError:
-    #     print("No input data file")
+    try:
+        # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
+        rel_path = sys.argv[1] # "/data/data1.1024"
+        cwd = os.getcwd()
+        abs_file_path = cwd + rel_path
+        input_file = open(abs_file_path)
+        data_array = []
+        for line in input_file.readlines():
+            data_array.append(int(line))
+        input_file.close()
+        print("Input data: {}".format(data_array))
+        print("quicksort without cutoff called on data_array".format(quicksort(data_array, 0, len(data_array))))
+        print("Does sorted(data_array) equal data_array after quicksort?: {}".format(data_array == sorted(data_array)))
+
+    except IndexError:
+        print("No input data file")
 
 
 if __name__ == '__main__':

@@ -2,8 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abc72a63-63ec-4435-8f15-b6d3224bfb7a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/timing_experiments.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/Q1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Q1/Q1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/1024_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/1048576_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/128_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/131072_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/16384_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/16_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/2048_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/256_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/262144_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/32768_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/32_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/4096_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/512_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/524288_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/64_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/65536_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/8192_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q1/data/8_unordered_rand_int.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q2/Q2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Q2/Q2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q3/Q3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Q3/Q3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q4/Q4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Q4/Q4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Q5/Q5.py" beforeDir="false" afterPath="$PROJECT_DIR$/Q5/Q5.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,22 +38,10 @@
       <file leaf-file-name="Q1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q1/Q1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state relative-caret-position="324">
+              <caret line="88" column="26" lean-forward="true" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="timing_experiments.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/timing_experiments.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#60#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,8 +50,8 @@
       <file leaf-file-name="Q2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q2/Q2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-595">
-              <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            <state relative-caret-position="344">
+              <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -53,8 +62,8 @@
       <file leaf-file-name="Q3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q3/Q3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="429">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -65,8 +74,8 @@
       <file leaf-file-name="Q4.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q4/Q4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+            <state relative-caret-position="378">
+              <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -74,14 +83,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Q5.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Q5.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Q5/Q5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-629">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="323">
+              <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="timing_experiments.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/timing_experiments.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -101,12 +119,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Q2/Q2.py" />
-        <option value="$PROJECT_DIR$/Q3/Q3.py" />
-        <option value="$PROJECT_DIR$/Q5/Q5.py" />
-        <option value="$PROJECT_DIR$/Q4/Q4.py" />
-        <option value="$PROJECT_DIR$/Q1/Q1.py" />
         <option value="$PROJECT_DIR$/timing_experiments.py" />
+        <option value="$PROJECT_DIR$/Q3/Q3.py" />
+        <option value="$PROJECT_DIR$/Q1/Q1.py" />
+        <option value="$PROJECT_DIR$/Q2/Q2.py" />
+        <option value="$PROJECT_DIR$/Q4/Q4.py" />
+        <option value="$PROJECT_DIR$/Q5/Q5.py" />
       </list>
     </option>
   </component>
@@ -131,6 +149,12 @@
               <item name="ECE573_HW2" type="b2602c69:ProjectViewProjectNode" />
               <item name="ECE573_HW2" type="462c0819:PsiDirectoryNode" />
               <item name="Q1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ECE573_HW2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ECE573_HW2" type="462c0819:PsiDirectoryNode" />
+              <item name="Q1" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ECE573_HW2" type="b2602c69:ProjectViewProjectNode" />
@@ -178,7 +202,79 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Q4">
+    <configuration name="Q1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ECE573_HW2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Q1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Q1/Q1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Q2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ECE573_HW2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Q2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Q2/Q2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Q3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ECE573_HW2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Q3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Q3/Q3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Q4" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ECE573_HW2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Q4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Q4/Q4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="Q5" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ECE573_HW2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -197,9 +293,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <list>
+      <item itemvalue="Python.Q5" />
+      <item itemvalue="Python.Q1" />
+      <item itemvalue="Python.Q2" />
+      <item itemvalue="Python.Q3" />
+      <item itemvalue="Python.Q4" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Q4" />
         <item itemvalue="Python.Q5" />
+        <item itemvalue="Python.Q3" />
+        <item itemvalue="Python.Q2" />
+        <item itemvalue="Python.Q1" />
       </list>
     </recent_temporary>
   </component>
@@ -220,10 +327,10 @@
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32893288" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32893288" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -243,10 +350,17 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/timing_experiments.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Q1/Q1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        <state relative-caret-position="324">
+          <caret line="88" column="26" lean-forward="true" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -255,8 +369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Q2/Q2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-595">
-          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        <state relative-caret-position="344">
+          <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -265,8 +379,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Q3/Q3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="429">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -275,8 +389,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Q4/Q4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        <state relative-caret-position="378">
+          <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -285,20 +399,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Q5/Q5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-629">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="323">
+          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/timing_experiments.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
           </folding>
         </state>
       </provider>

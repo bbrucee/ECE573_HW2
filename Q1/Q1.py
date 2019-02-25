@@ -1,5 +1,6 @@
 import sys
 import os
+import csv
 
 
 # https://www.geeksforgeeks.org/insertion-sort/
@@ -66,25 +67,32 @@ def shell_sort(input_array):
     return comparisons
 
 
+def parse_input_file(input_file):
+    data_array = []
+    for line in input_file.readlines():
+        print(line)
+        # data_array.append(int(line))
+    print("Input data: {}".format(data_array))
+    return data_array
+
+
 def main():
-    pass
-    # try:
-    #     # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
-    #     rel_path = sys.argv[1]
-    #     cwd = os.getcwd()
-    #     abs_file_path = cwd + rel_path
-    #     print("Input data file: {}".format(abs_file_path))
-    #     file = open(abs_file_path)
-    #     data_array = []
-    #     for line in file.readlines():
-    #         data_array.append(int(line))
-    #     print("Input data: {}".format(data_array))
-    #     file.close()
-    #     print("Brute Force algorithm finds {} triples".format(brute_force_3sum(data_array)))
-    #     print("Binary Search algorithm finds {} triples".format(binary_search_3sum(data_array)))
-    #
-    # except IndexError:
-    #     print("No input data file")
+    try:
+        # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
+        rel_path = sys.argv[1]  # "/data/data1.1024"
+        cwd = os.getcwd()
+        abs_file_path = cwd + rel_path
+        input_file = open(abs_file_path)
+        data_array = []
+        for line in input_file.readlines():
+            data_array.append(int(line))
+        input_file.close()
+        print("Input data: {}".format(data_array))
+        print("Shell sort called on data_array, used {} comparisons".format(shell_sort(data_array)))
+        print("Does sorted(data_array) equal data_array after shell_sort?: {}".format(data_array == sorted(data_array)))
+
+    except IndexError:
+        print("No input data file")
 
 
 if __name__ == '__main__':
