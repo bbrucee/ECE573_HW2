@@ -2,20 +2,6 @@ import sys
 import os
 
 
-def insertion_sort(input_array):
-    comparisons = 0
-    for i in range(1, len(input_array)):
-        key = input_array[i]
-        j = i-1
-        while j >= 0 and key < input_array[j]:
-            comparisons += 1
-            input_array[j+1] = input_array[j]
-            j -= 1
-        comparisons += 1
-        input_array[j+1] = key
-    return comparisons
-
-
 # https://www.geeksforgeeks.org/merge-sort/
 def merge(input_array, left, middle, right):
     comps = 0
@@ -88,13 +74,19 @@ def iterative_mergesort(input_array):
 
 def mergesort_insertion_cutoff(input_array, left, right, cutoff=7):
     if right > left:
-        if right - left < cutoff:
-            insertion_sort(input_array[left:right])
-            return
-        mid_point = (left + right) // 2
-        mergesort_insertion_cutoff(input_array, left, mid_point)
-        mergesort_insertion_cutoff(input_array, mid_point+1, right)
-        merge(input_array, left, mid_point, right)
+        if right - left <= cutoff:
+            for i in range(left, right+1):
+                key = input_array[i]
+                j = i - 1
+                while j >= left and key < input_array[j]:
+                    input_array[j + 1] = input_array[j]
+                    j -= 1
+                input_array[j + 1] = key
+        else:
+            mid_point = (left + right) // 2
+            mergesort_insertion_cutoff(input_array, left, mid_point)
+            mergesort_insertion_cutoff(input_array, mid_point+1, right)
+            merge(input_array, left, mid_point, right)
 
 
 def main():

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abc72a63-63ec-4435-8f15-b6d3224bfb7a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Q1/Q1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Q1/Q1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Q4/Q4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Q4/Q4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Q5/Q5.py" beforeDir="false" afterPath="$PROJECT_DIR$/Q5/Q5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/timing_experiments.py" beforeDir="false" afterPath="$PROJECT_DIR$/timing_experiments.py" afterDir="false" />
@@ -55,8 +54,8 @@
       <file leaf-file-name="Q4.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q4/Q4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="91" column="51" lean-forward="true" selection-start-line="91" selection-start-column="51" selection-end-line="91" selection-end-column="51" />
+            <state relative-caret-position="187">
+              <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -67,8 +66,8 @@
       <file leaf-file-name="Q5.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q5/Q5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="59" column="50" lean-forward="true" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+            <state relative-caret-position="256">
+              <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -79,8 +78,8 @@
       <file leaf-file-name="timing_experiments.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/timing_experiments.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
+            <state relative-caret-position="375">
+              <caret line="155" column="24" selection-start-line="155" selection-start-column="24" selection-end-line="155" selection-end-column="24" />
               <folding>
                 <element signature="e#0#60#0" expanded="true" />
               </folding>
@@ -97,6 +96,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>[</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -106,8 +110,8 @@
         <option value="$PROJECT_DIR$/Q3/Q3.py" />
         <option value="$PROJECT_DIR$/Q2/Q2.py" />
         <option value="$PROJECT_DIR$/Q1/Q1.py" />
-        <option value="$PROJECT_DIR$/Q5/Q5.py" />
         <option value="$PROJECT_DIR$/Q4/Q4.py" />
+        <option value="$PROJECT_DIR$/Q5/Q5.py" />
         <option value="$PROJECT_DIR$/timing_experiments.py" />
       </list>
     </option>
@@ -364,20 +368,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Q5/Q5.py">
+    <entry file="file://$PROJECT_DIR$/Q4/Q4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="59" column="50" lean-forward="true" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+        <state relative-caret-position="187">
+          <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Q4/Q4.py">
+    <entry file="file://$PROJECT_DIR$/Q5/Q5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="91" column="51" lean-forward="true" selection-start-line="91" selection-start-column="51" selection-end-line="91" selection-end-column="51" />
+        <state relative-caret-position="256">
+          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -386,8 +390,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/timing_experiments.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
+        <state relative-caret-position="375">
+          <caret line="155" column="24" selection-start-line="155" selection-start-column="24" selection-end-line="155" selection-end-column="24" />
           <folding>
             <element signature="e#0#60#0" expanded="true" />
           </folding>

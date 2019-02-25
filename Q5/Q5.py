@@ -2,19 +2,6 @@ import sys
 import os
 
 
-def insertion_sort(input_array):
-    comparisons = 0
-    for i in range(1, len(input_array)):
-        key = input_array[i]
-        j = i-1
-        while j >= 0 and key < input_array[j]:
-            comparisons += 1
-            input_array[j+1] = input_array[j]
-            j -= 1
-        comparisons += 1
-        input_array[j+1] = key
-    return comparisons
-
 # https://www.geeksforgeeks.org/quick-sort/
 # https://stackoverflow.com/questions/50912873/python-quicksort-with-median-of-three
 
@@ -56,9 +43,14 @@ def quicksort(input_array, left, right):
 
 def quicksort_insertion_cutoff(input_array, left, right, cutoff=7):
     if left < right:
-        if right - left < cutoff:
-            insertion_sort(input_array[left:right])
-            return
+        if right - left <= cutoff:
+            for i in range(left, right):
+                key = input_array[i]
+                j = i - 1
+                while j >= left and key < input_array[j]:
+                    input_array[j + 1] = input_array[j]
+                    j -= 1
+                input_array[j + 1] = key
         partition_index = partition(input_array, left, right)
         quicksort_insertion_cutoff(input_array, left, partition_index)
         quicksort_insertion_cutoff(input_array, partition_index + 1, right)

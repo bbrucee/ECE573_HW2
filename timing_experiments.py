@@ -95,11 +95,11 @@ def quicksort_vs_mergesort():
         for line in input_file.readlines():
             data_array.append(int(line))
         input_file.close()
-        ms_timer = timeit.Timer(functools.partial(recursive_mergesort, data_array, 0, len(data_array)-1))
+        ms_timer = timeit.Timer(functools.partial(recursive_mergesort, data_array[:], 0, len(data_array)-1))
         ms_timings.append(ms_timer.timeit(5))
-        ite_ms_timer = timeit.Timer(functools.partial(iterative_mergesort, data_array))
+        ite_ms_timer = timeit.Timer(functools.partial(iterative_mergesort, data_array[:]))
         ite_ms_timings.append(ite_ms_timer.timeit(5))
-        qs_timer = timeit.Timer(functools.partial(quicksort, data_array, 0, len(data_array)))
+        qs_timer = timeit.Timer(functools.partial(quicksort, data_array[:], 0, len(data_array)))
         qs_timings.append(qs_timer.timeit(5))
     print(ms_timings)
     print(ite_ms_timings)
@@ -122,10 +122,11 @@ def quicksort_vs_mergesort_cutoffs():
         for line in input_file.readlines():
             data_array.append(int(line))
         input_file.close()
-        ms_timer = timeit.Timer(functools.partial(mergesort_insertion_cutoff, data_array, 0, len(data_array) - 1))
+        ms_timer = timeit.Timer(functools.partial(mergesort_insertion_cutoff, data_array[:], 0, len(data_array) - 1))
         ms_timings.append(ms_timer.timeit(1))
-        qs_timer = timeit.Timer(functools.partial(quicksort_insertion_cutoff, data_array, 0, len(data_array)))
+        qs_timer = timeit.Timer(functools.partial(quicksort_insertion_cutoff, data_array[:], 0, len(data_array)))
         qs_timings.append(qs_timer.timeit(1))
+
     print(ms_timings)
     print(qs_timings)
 
@@ -133,7 +134,26 @@ def quicksort_vs_mergesort_cutoffs():
 
 
 def quicksort_varying_cutoffs():
-    pass
+    qs_timings_list = []
+
+    data_sizes = [1024, 2048, 4096, 8192, 16384, 32768]
+    cutoffs = range(7, 700, 7)
+    for cutoff in cutoffs:
+        qs_timings = []
+        for data_size in data_sizes:
+            rel_path = "/Q1/data/data1.{}".format(data_size)
+            cwd = os.getcwd()
+            abs_file_path = cwd + rel_path
+            input_file = open(abs_file_path)
+            data_array = []
+            for line in input_file.readlines():
+                data_array.append(int(line))
+            input_file.close()
+            qs_timer = timeit.Timer(functools.partial(quicksort_insertion_cutoff, data_array[:], 0, len(data_array), cutoff))
+            qs_timings.append(qs_timer.timeit(1))
+        qs_timings_list.append(qs_timings)
+
+    print(qs_timings_list)
 
 
 def main():
@@ -141,8 +161,8 @@ def main():
     # kendalltau_timing()
     # mergesort_vs_mergesort()
     # quicksort_vs_mergesort()
-    quicksort_vs_mergesort_cutoffs()
-
+    # quicksort_vs_mergesort_cutoffs()
+    quicksort_varying_cutoffs()
 
 if __name__ == '__main__':
     main()
