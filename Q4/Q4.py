@@ -89,7 +89,7 @@ def iterative_mergesort(input_array):
 def mergesort_insertion_cutoff(input_array, left, right, cutoff=7):
     if right > left:
         if right - left < cutoff:
-            insertion_sort(input_array)
+            insertion_sort(input_array[left:right])
             return
         mid_point = (left + right) // 2
         mergesort_insertion_cutoff(input_array, left, mid_point)

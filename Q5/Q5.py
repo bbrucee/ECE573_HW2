@@ -57,7 +57,7 @@ def quicksort(input_array, left, right):
 def quicksort_insertion_cutoff(input_array, left, right, cutoff=7):
     if left < right:
         if right - left < cutoff:
-            insertion_sort(input_array)
+            insertion_sort(input_array[left:right])
             return
         partition_index = partition(input_array, left, right)
         quicksort_insertion_cutoff(input_array, left, partition_index)

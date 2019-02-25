@@ -61,10 +61,11 @@ def shell3(input_array):
 # Returns number of comparisons
 def shell_sort(input_array):
     comparisons = 0
+    insertion_partial = 0
     comparisons += shell7(input_array)
     comparisons += shell3(input_array)
-    comparisons += insertion_sort(input_array)
-    return comparisons
+    insertion_partial += insertion_sort(input_array)
+    return comparisons+insertion_partial, insertion_partial
 
 
 def parse_input_file(input_file):
@@ -79,7 +80,7 @@ def parse_input_file(input_file):
 def main():
     try:
         # https://stackoverflow.com/questions/7165749/open-file-in-a-relative-location-in-python
-        rel_path = sys.argv[1]  # "/data/data1.1024"
+        rel_path = "/data/data1.1024"
         cwd = os.getcwd()
         abs_file_path = cwd + rel_path
         input_file = open(abs_file_path)
@@ -88,7 +89,7 @@ def main():
             data_array.append(int(line))
         input_file.close()
         print("Input data: {}".format(data_array))
-        print("Shell sort called on data_array, used {} comparisons".format(shell_sort(data_array)))
+        print("Shell sort called on data_array, used (total, insertion phase) -> {}".format(shell_sort(data_array)))
         print("Does sorted(data_array) equal data_array after shell_sort?: {}".format(data_array == sorted(data_array)))
 
     except IndexError:
