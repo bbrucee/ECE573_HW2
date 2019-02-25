@@ -370,7 +370,7 @@ def quicksort_varying_cutoffs(dataset_number=1):
     fig.subplots_adjust(left=0.2, top=0.8, wspace=1)
 
     ax = plt.subplot2grid((2, 2), (1, 0), colspan=2, rowspan=1)
-    ax.table(cellText=cell_text, rowLabels=rows, colLabels=columns, loc='upper center')
+    ax.table(cellText=cell_text[::10], rowLabels=rows[::10], colLabels=columns, loc='upper center')
     ax.axis("off")
 
     plt.subplot2grid((2, 2), (0, 0), colspan=2, rowspan=1)
