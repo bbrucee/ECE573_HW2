@@ -1,9 +1,8 @@
-from Q1.Q1 import insertion_sort, shell7, shell3, shell_sort
-from Q2.Q2 import kd_merge, kd_mergesort, kendalltau
-from Q3.Q3 import q3_dataset_creation, bubblesort
-from Q4.Q4 import merge, mergesort_insertion_cutoff, iterative_mergesort, recursive_mergesort
-from Q5.Q5 import median_of_three, partition, quicksort, quicksort_insertion_cutoff
-from glob import glob
+from Q1.Q1 import insertion_sort, shell_sort
+from Q2.Q2 import kendalltau
+from Q3.Q3 import bubblesort
+from Q4.Q4 import mergesort_insertion_cutoff, iterative_mergesort, recursive_mergesort
+from Q5.Q5 import quicksort, quicksort_insertion_cutoff
 import matplotlib.pyplot as plt
 import os
 import timeit
@@ -252,7 +251,7 @@ def quicksort_vs_mergesort_cutoffs():
     for line in input_file.readlines():
         data_array.append(int(line))
     input_file.close()
-    data_array = data_array*128
+    data_array = data_array*256
     shuffle(data_array)
     data_sizes.append(len(data_array))
     ms_timer = timeit.Timer(functools.partial(mergesort_insertion_cutoff, data_array[:], 0, len(data_array) - 1))
