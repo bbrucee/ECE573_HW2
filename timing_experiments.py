@@ -311,14 +311,14 @@ def quicksort_vs_mergesort_cutoffs(dataset_number=1):
     qs_timer = timeit.Timer(functools.partial(quicksort_insertion_cutoff, data_array[:], 0, len(data_array)))
     qs_timings.append(qs_timer.timeit(1))
 
-    columns = ('Merge Sort', 'Quick Sort')
+    columns = ('Merge-Insertion Hybrid Sort', 'Quick-Insertion Hybrid Sort')
     rows = ["{} integers".format(x) for x in data_sizes]
     cell_text = []
     for time_tuple in zip(ms_timings, qs_timings):
         cell_text.append(["{0:.10f} seconds".format(time_data) for time_data in time_tuple])
 
     fig = plt.figure(1)
-    plt.suptitle("Q5: Merge Sort vs Quick Sort Runtime Comparison w/ N=7 Cutoff")
+    plt.suptitle("Q5: Merge Sort vs Quick Sort Runtime Comparison w/ N=7 Cutoff on data{}".format(dataset_number))
     fig.subplots_adjust(left=0.2, top=0.8, wspace=1)
 
     ax = plt.subplot2grid((2, 2), (1, 0), colspan=4, rowspan=2)
@@ -327,12 +327,12 @@ def quicksort_vs_mergesort_cutoffs(dataset_number=1):
 
     plt.subplot2grid((2, 2), (0, 0))
     plt.plot(data_sizes[:-1], ms_timings[:-1])
-    plt.title("Merge Sort", y=1.08)
+    plt.title("Merge-Insertion Hybrid Sort", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Runtime (seconds)")
     plt.subplot2grid((2, 2), (0, 1))
     plt.plot(data_sizes[:-1], qs_timings[:-1])
-    plt.title("Quick Sort", y=1.08)
+    plt.title("Quick-Insertion Hybrid Sort", y=1.08)
     plt.xlabel("Input Size (Length of Array)")
     plt.ylabel("Runtime (seconds)")
 
